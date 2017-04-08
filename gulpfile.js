@@ -4,7 +4,7 @@ var gulp       = require("gulp");
 var rename     = require("gulp-rename");//permite renombrar archivos
 var sass       = require("gulp-sass");//compila archivos scss
 var source     = require("vinyl-source-stream");//permite trandormar el codigo ah algo entendible para gulp
-
+var watchify   = require("watchify");//se quede en la espera de cambios dentro de los archivos 
 //============ Tareas =============// 
 
 //Permite realizar la compilaxion de archivos sass
@@ -36,6 +36,37 @@ gulp.task("reload", function(){
 	gulp.watch("./src/index.js", ["package-js"]);
 });
 
+
+//automatizacion usando watchify
+function compile(watch) 
+{
+ 	var bundle = watchify(browserify('./src/index.js', {debug: true}));
+
+  	function rebundle() 
+  	{
+    	bundle.transform(babelify)
+      		  .bundle()
+      		  .pipe(source('index.js'))
+      		  .pipe(rename('app.js'))
+      		  .pipe(gulp.dest('public'));
+  }
+
+  if (watch) 
+  {
+    	bundle.on('update', function () {
+    	  console.log('--> Bundling...');
+    	  rebundle();
+     	  console.log('--> End Bundling...');
+    	});
+  }
+  rebundle();
+}
+
+gulp.task('build', function () {
+  return compile();
+});
+gulp.task('watch', function () { return compile(true); });
+//automatizacion usando watchify
 
 //Se agregan las tareas default
 gulp.task("default", ["compile-sass", "copy-assets", "package-js"]);

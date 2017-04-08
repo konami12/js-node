@@ -19,6 +19,11 @@ app.get("/", function(request, response){
 	response.render("index");
 });
 
+app.get("/signup", function(request, response){
+	response.render("index");
+});
+
+
 
 //se lanza el servidor web
 app.listen(3000, function(err){

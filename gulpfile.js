@@ -33,7 +33,7 @@ gulp.task("package-js", function(){
 
 //Se automatiza el empaquetado de los js
 gulp.task("reload", function(){
-	gulp.watch("./src/index.js", ["package-js"]);
+	gulp.watch("./src/**/*.js", ["package-js"]);
 });
 
 

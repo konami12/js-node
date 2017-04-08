@@ -23,6 +23,9 @@ app.get("/signup", function(request, response){
 	response.render("index");
 });
 
+app.get("/signin", function(request, response){
+	response.render("index");
+});
 
 
 //se lanza el servidor web

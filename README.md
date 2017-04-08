@@ -14,7 +14,7 @@ sudo npm init
 
 listado de paquetes "https://www.npmjs.com/"
 
-//======================================================================================//
+//===============================================================================//
 
 INSTALANDO PAQUETES 
 
@@ -30,7 +30,7 @@ npm i --save [nombre del paquete] //vercion corta
 	"--save-dev" o -D : Los pequetes instalados se colocaran en "devDependencies"
 	"-g" o "--global" : instala globalmente una dependencia
 
-//======================================================================================//
+//===============================================================================//
 
 ENSAMBLADORES DE PAQUETES "PACKAGE BUNDLE"
 
@@ -39,7 +39,7 @@ Permiten integrar nuestro codigo con los codigos de las dependencias que utilize
 	- browserify : "http://browserify.org/"
 	- webpack    : "https://webpack.github.io/"
 
-//======================================================================================//
+//===============================================================================//
 
 AUTOMATIZADORES 
 
@@ -60,7 +60,7 @@ gulp.task("[nombre de mi tarea]", function(){
 
 Nota : para poder utilizar en cualquier parte es necesario instalar lo de manera global.
 
-//======================================================================================//
+//===============================================================================//
 
 MANEJADORES DE VISTAS 
 
@@ -79,7 +79,7 @@ GENERADORES DE ICONOS
 
  - http://www.favicon-generator.org/
 
- //======================================================================================//
+ //===============================================================================//
 
  USO DE NUEVAS FUNCIONALIDADES EN JAVASCRIPT
 
@@ -90,7 +90,7 @@ GENERADORES DE ICONOS
 
  para poder intrgrar babel con browserify se tiene que instalar le paquete babelify
 
- //======================================================================================//
+ //===============================================================================//
 
 SINGLE PAGE APPLICATION
 
@@ -99,7 +99,7 @@ anteriros mente los navegadores, Desde html5 presentan una nueva funcionalidad q
 la ruta a la que se esta apuntando, los navegadores viejos usaban algo llamado hastbang lo cual solo agregaba un numeral lo cual permitia que 
 la ruta no cambiara. 
 
-//======================================================================================//
+//===============================================================================//
 
 AUTOMATIZAR TAREAS
 
@@ -110,3 +110,10 @@ Para la automatizacion de tareas se una npm-scripts estos se agregan dentro del 
 cuando se declara el comando dentro de nuestro package.json en consola corremos 
 
 npm run [NOMBRE DEL COMANDO]
+
+//===============================================================================//
+
+MANEJO DE TEMPLATES USANDO YO-YO
+
+Nos permite el manejo de templates dentro el js que se le entrega al cliente, ademas de poder 
+enviar uso de variables dentro de los templates.

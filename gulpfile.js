@@ -31,5 +31,11 @@ gulp.task("package-js", function(){
         .pipe(gulp.dest("./public"));
 });
 
+//Se automatiza el empaquetado de los js
+gulp.task("reload", function(){
+	gulp.watch("./src/index.js", ["package-js"]);
+});
+
+
 //Se agregan las tareas default
 gulp.task("default", ["compile-sass", "copy-assets", "package-js"]);

@@ -10,4 +10,5 @@ page("/", function(contexto, next){
 page("/signup", function(contexto, next){
 	main.innerHTML = "<a href='/' >Home > </a><a href='/signup' >Signup</a>";
 });
+
 page();

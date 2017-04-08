@@ -1,0 +1,30 @@
+{
+  "name": "curos-de-js",
+  "version": "0.1.0",
+  "description": "Taller practico de JS ",
+  "main": "server.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/konami12/js-node.git"
+  },
+  "keywords": [
+    "taller",
+    "de",
+    "js",
+    "usando",
+    "node",
+    "js"
+  ],
+  "author": "jmendez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konami12/js-node/issues"
+  },
+  "homepage": "https://github.com/konami12/js-node#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

@@ -2,3 +2,4 @@
 # Reglass para ignorar archivos                         #
 #=======================================================#
 /node_modules
+/public

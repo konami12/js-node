@@ -12,15 +12,14 @@ body {
   background-color: white;
 }
 
+.aux-container 
+{
+  margin: 30px auto;
+ }
+ 
 #main-container {
   margin: auto;
 }
-
-.aux-container 
-{
-  margin-top:30px;
-}
-
 
 .iphone {
   max-width: 100%;
@@ -46,8 +45,6 @@ body {
   font-family: 'Oleo Script';
   font-size: 42px;
 }
-
-
 
 .signup-box .platzigram {
   font-family: 'Oleo Script';
@@ -76,14 +73,11 @@ body {
 .signup-form .btn.btn-signup {
   background-color: #125688;
 }
-
-
 .landing
 {
   margin-top:30px;
 }
-
 .timeline
 {
-  padding: 30px auto;
+  padding: 30px;
 }

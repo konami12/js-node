@@ -1,4 +1,4 @@
-$secondary-color : red;
+$secondary-color : #0047b3;
 @import "./node_modules/materialize-css/sass/materialize.scss";
 
 body {
@@ -7,9 +7,20 @@ body {
   font-family: Montserrat;
 }
 
-#main-container {
-  margin: 30px auto;
+.header
+{
+  background-color: white;
 }
+
+#main-container {
+  margin: auto;
+}
+
+.aux-container 
+{
+  margin-top:30px;
+}
+
 
 .iphone {
   max-width: 100%;
@@ -28,6 +39,15 @@ body {
   padding: 10px 0;
   text-align: center;
 }
+
+.platzigram 
+{
+  color:$secondary-color!important;
+  font-family: 'Oleo Script';
+  font-size: 42px;
+}
+
+
 
 .signup-box .platzigram {
   font-family: 'Oleo Script';
@@ -55,4 +75,15 @@ body {
 
 .signup-form .btn.btn-signup {
   background-color: #125688;
+}
+
+
+.landing
+{
+  margin-top:30px;
+}
+
+.timeline
+{
+  padding: 30px auto;
 }

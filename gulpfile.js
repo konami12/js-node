@@ -34,6 +34,7 @@ gulp.task("package-js", function(){
 //Se automatiza el empaquetado de los js
 gulp.task("reload", function(){
 	gulp.watch("./src/**/*.js", ["package-js"]);
+  gulp.watch("./assets/*.scss", ["compile-sass", "copy-assets"]);
 });
 
 

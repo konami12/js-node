@@ -12,19 +12,21 @@ app.set("view engine", "pug");
 //se le indica los archivos staticos
 app.use(express.static("./public"));
 
-//======================================================//
+//=========-=============================================//
 
 //se indica la ruta que se esta inciando
 app.get("/", function(request, response){
-	response.render("index");
+
+	//pasando valores al template de pug 
+	response.render("index", {title: ".:: Platzigram ::."});
 });
 
 app.get("/signup", function(request, response){
-	response.render("index");
+	response.render("index", {title: ".:: Platzigram | Signup ::."});
 });
 
 app.get("/signin", function(request, response){
-	response.render("index");
+	response.render("index", {title: ".:: Platzigram | Signin ::."});
 });
 
 

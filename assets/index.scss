@@ -146,4 +146,20 @@ $avatar-size : 48px;
   color:$secondary-color;
 }
 
+.card .fa-heart
+{
+ color:#AD1457;
+ display: none;
+}
 
+.card.liked
+{
+  .fa-heart
+  {
+    display: block;
+  }
+  .fa-heart-o
+  {
+    display: none;
+  }
+}

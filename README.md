@@ -138,5 +138,11 @@ Ejemplo :
 		gulp.watch("./assets/*.scss", ["complile-sass"]);
 	});
 
-# gulp auto-compile
+$ gulp auto-compile
 
+
+//==============================================================================//
+
+METODO BIND
+
+El metodo bind es una propiedad de todas las funciones de JS permite cambiar el this de una funcion a otra

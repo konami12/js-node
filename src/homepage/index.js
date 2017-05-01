@@ -15,14 +15,14 @@ page("/", function(contexto, next){
 		   	  		            },
 		   	  		    url   : 'office.jpg',
 		   	  		    likes : 1024,
-		   	  		    likef : true},
+		   	  		    liked : true},
 				       {user   : {
 				       		  		username : "Konami12",
 				       		  		avatar   : "avatar.jpg"
 		   	  		            },
 		   	  		    url   : 'office.jpg',
 		   	  		    likes : 1024,
-		   	  		    likef : true},				       		 
+		   	  		    liked : false},				       		 
 				   ];
 
 	main.appendChild(template(pictures));

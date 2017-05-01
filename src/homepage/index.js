@@ -7,6 +7,8 @@ page("/", function(contexto, next){
 	var title          = document.getElementsByTagName("title");
 	title[0].innerHTML = ".:: Platzigram ::.";
 	main.innerHTML     = "";
+	var date           = new Date();
+
 
 	var pictures = [
 				       {user   : {
@@ -14,14 +16,16 @@ page("/", function(contexto, next){
 				       		  		avatar   : "avatar.jpg"
 		   	  		            },
 		   	  		    url   : 'office.jpg',
-		   	  		    likes : 1024,
+		   	  		    date  : new Date(),
+		   	  		    likes : 10,
 		   	  		    liked : true},
 				       {user   : {
 				       		  		username : "Konami12",
 				       		  		avatar   : "avatar.jpg"
 		   	  		            },
-		   	  		    url   : 'office.jpg',
-		   	  		    likes : 1024,
+		   	  		    url   : 'hulk.jpg', 
+		   	  		    date  : date.setDate(date.getDate() - 10),
+		   	  		    likes : 24,
 		   	  		    liked : false},				       		 
 				   ];
 

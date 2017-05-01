@@ -137,12 +137,45 @@ Ejemplo :
 	gulp.task("auto-compile", function(){
 		gulp.watch("./assets/*.scss", ["complile-sass"]);
 	});
-
-$ gulp auto-compile
-
+   $ gulp auto-compile
 
 //==============================================================================//
 
 METODO BIND
 
 El metodo bind es una propiedad de todas las funciones de JS permite cambiar el this de una funcion a otra
+
+//==============================================================================//
+
+MOMENT JS
+
+Permite formatear las fechas por zona horaria y permite manipular multiples estilos de fechas.
+
+- https://momentjs.com/
+
+npm i -S moment
+
+
+
+//==============================================================================//
+
+FORMAT JS
+
+Permite internacionalizar textos y fechas, esta libreria es soportada por los nvegadores pero cuenta con una exepcion para safari.
+para poder intalar esta libreria se tendria que realizar lo siguiente.
+
+npm i -S intl
+npm i -S intl-relativeformat
+
+al no contar con intl safari se tiene que agregar al objeto global en este caso es el objeto windows que esta por default en los navegadores.
+
+//condicion para safari
+if (!window.Intl)
+{
+    window.Intl = require("intl");
+    //se definen los paquetes de idiomas que se utilizaran
+    require("intl/locale-data/jsonp/en-US.js");
+    require("intl/locale-data/jsonp/es.js");
+}
+
+- https://formatjs.io/

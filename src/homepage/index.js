@@ -7,6 +7,24 @@ page("/", function(contexto, next){
 	var title          = document.getElementsByTagName("title");
 	title[0].innerHTML = ".:: Platzigram ::.";
 	main.innerHTML     = "";
-	main.appendChild(template);
+
+	var pictures = [
+				       {user   : {
+				       		  		username : "Konami12",
+				       		  		avatar   : "avatar.jpg"
+		   	  		            },
+		   	  		    url   : 'office.jpg',
+		   	  		    likes : 1024,
+		   	  		    likef : true},
+				       {user   : {
+				       		  		username : "Konami12",
+				       		  		avatar   : "avatar.jpg"
+		   	  		            },
+		   	  		    url   : 'office.jpg',
+		   	  		    likes : 1024,
+		   	  		    likef : true},				       		 
+				   ];
+
+	main.appendChild(template(pictures));
 });
 page();

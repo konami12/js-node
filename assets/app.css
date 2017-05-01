@@ -6743,3 +6743,42 @@ body {
 
 .timeline {
   padding: 30px; }
+
+.aux-card {
+  display: inline-block !important;
+  vertical-align: top; }
+
+.avatar {
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 12px;
+  max-width: 48px;
+  vertical-align: top; }
+
+.username {
+  color: #0047b3;
+  height: 48px;
+  line-height: 48px;
+  max-height: 48px; }
+
+.card small.time {
+  line-height: 48px; }
+
+.card p {
+  padding: 20px 0; }
+
+.card p a,
+.card p span {
+  display: inline-block;
+  vertical-align: top; }
+
+.card .likes {
+  line-height: 30px;
+  margin-left: 12px; }
+
+.card i {
+  font-size: 20px;
+  line-height: 30px; }
+
+.card .fa-heart-o {
+  color: #0047b3; }

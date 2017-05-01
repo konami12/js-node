@@ -17,7 +17,7 @@ gulp.task("compile-sass", function(){
 
 //Permite copiar los assets en la carpeta public
 gulp.task("copy-assets", function(){
-	gulp.src(["./assets/*.css", "./assets/*.png", "./assets/icons/*"])
+	gulp.src(["./assets/*.css", "./assets/*.png", "./assets/icons/*", "./assets/*.jpg"])
 		.pipe(gulp.dest("public"));
 });
 

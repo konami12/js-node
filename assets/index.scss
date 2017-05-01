@@ -81,3 +81,69 @@ body {
 {
   padding: 30px;
 }
+
+
+$avatar-size : 48px;
+
+.aux-card
+{
+  display: inline-block!important;
+  vertical-align: top;
+}
+
+.avatar
+{
+  display: inline-block;
+  border-radius:50%;
+  margin-right: 12px;
+  max-width : $avatar-size;
+  vertical-align: top;
+}
+
+.username
+{
+  color:$secondary-color;
+  height: $avatar-size;
+  line-height: $avatar-size;
+  max-height: $avatar-size;
+}
+
+.card small.time
+{
+  line-height: $avatar-size;
+}
+
+.card p
+{
+  padding: 20px 0;
+}
+
+
+.card p a,
+.card p span,
+{
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+
+.card .likes
+{
+  line-height: 30px;
+  margin-left: 12px;
+}
+
+.card i
+{
+  font-size: 20px;
+  line-height: 30px;
+}
+
+
+.card .fa-heart-o
+{
+  color:$secondary-color;
+}
+
+

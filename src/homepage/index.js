@@ -17,8 +17,8 @@ page("/", function(contexto, next){
 		   	  		            },
 		   	  		    url   : 'office.jpg',
 		   	  		    date  : new Date(),
-		   	  		    likes : 10,
-		   	  		    liked : true},
+		   	  		    likes : 0,
+		   	  		    liked : false},
 				       {user   : {
 				       		  		username : "Konami12",
 				       		  		avatar   : "avatar.jpg"

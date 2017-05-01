@@ -1,20 +1,8 @@
-var yo = require("yo-yo");
+var yo        = require("yo-yo");
+var translate = require("../translate");
 
-if (!window.Intl)
-{
-    window.Intl = require("intl");//se agrega el elemento Intl siempre que no exista esto es un caso especial para safari
-    require("intl/locale-data/jsonp/en-US.js");
-    require("intl/locale-data/jsonp/es.js");
-}
+translate.formatMessage("likes");
 
-
-//asignacion multiple
-var IntlRelativeFormat = window.IntlRelativeFormat = require('intl-relativeformat');//permite internaciolizar textos y fechas
-
-require('intl-relativeformat/dist/locale-data/en.js');
-require('intl-relativeformat/dist/locale-data/es.js');
-
-var relativeFormat = new IntlRelativeFormat("en-US");
 
 module.exports = function pictureCard(data){
 
@@ -37,7 +25,7 @@ module.exports = function pictureCard(data){
                             <img src = "${renderData.user.avatar}" title="${renderData.user.username}" class="avatar">
                             <span class="username">${renderData.user.username}</span>
                         </a>
-                        <small class="right time">${relativeFormat.format(renderData.date)}</small>
+                        <small class="right time">${translate.formatDate(renderData.date)}</small>
                         <p>
                             <a class="left" href="#" onclick=${actionLike.bind(null, true)}>
                                 <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -45,7 +33,7 @@ module.exports = function pictureCard(data){
                             <a class="left" href="#" onclick=${actionLike.bind(null, false)}>
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                             </a>
-                            <span class="left likes">${renderData.likes} me gusta</span>
+                            <span class="left likes">${translate.formatMessage("likes", renderData.likes)}</span>
                         </p>
                     </div>
                   </div>`;

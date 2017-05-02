@@ -9,4 +9,5 @@ page("/signup", function(contexto, next){
 	title[0].innerHTML = ".:: Platzigram | Signup ::.";
 	empty(main).appendChild(template);
 });
+
 page();

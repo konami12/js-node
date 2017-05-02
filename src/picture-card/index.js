@@ -1,9 +1,6 @@
 var yo        = require("yo-yo");
 var translate = require("../translate");
 
-translate.formatMessage("likes");
-
-
 module.exports = function pictureCard(data){
 
     var el;
@@ -16,7 +13,7 @@ module.exports = function pictureCard(data){
      */
     function render(renderData)
     {
-        return yo`<div class="card ${renderData.liked ? 'liked' : '' }">
+         return yo`<div class="card ${renderData.liked ? 'liked' : '' }">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="${renderData.url}">
                     </div>
@@ -33,7 +30,7 @@ module.exports = function pictureCard(data){
                             <a class="left" href="#" onclick=${actionLike.bind(null, false)}>
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                             </a>
-                            <span class="left likes">${translate.formatMessage("likes", renderData.likes)}</span>
+                            <span class="left likes">${translate.formatMessage("likes", { likes : renderData.likes })}</span>
                         </p>
                     </div>
                   </div>`;

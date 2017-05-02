@@ -1,5 +1,5 @@
 var yo = require("yo-yo");
-
+var translate = require("../translate");
 
 module.exports = function layout(content){
 	return yo`<div>
@@ -12,7 +12,7 @@ module.exports = function layout(content){
 											Platzigram
 										</a>
 									</div>
-									<div class="col s2 m6 push-s10 push-m10">
+									<div class="col s2 m6 push-s10 push-m8">
 										<a class="dropdown-button btn btn-large btn-flat" data-activates="dropmenu">
 											<i class="fa fa-user" aria-hidden="true"></i>	
 										</a>
@@ -24,7 +24,7 @@ module.exports = function layout(content){
 												<a href="/signup">Signup</a>
 											</li>
 											<li>
-												<a href="#">Salir</a>
+												<a href="#">${translate.formatMessage('logout')}</a>
 											</li>
 										</ul>
 									</div>

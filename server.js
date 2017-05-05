@@ -29,6 +29,36 @@ app.get("/signin", function(request, response){
 	response.render("index", {title: ".:: Platzigram | Signin ::."});
 });
 
+app.get("/api/database", function(request, response){
+
+	var pictures = [
+				       {user   : {
+				       		  		username : "Konami12",
+				       		  		avatar   : "avatar.jpg"
+		   	  		            },
+		   	  		    url   : 'office.jpg',
+		   	  		    date  : new Date().getTime(),
+		   	  		    likes : 0,
+		   	  		    liked : false},
+				       {user   : {
+				       		  		username : "Konami12",
+				       		  		avatar   : "avatar.jpg"
+		   	  		            },
+		   	  		    url   : 'hulk.jpg', 
+		   	  		    date  :  new Date().setDate(new Date().getDate() - 10),
+		   	  		    likes : 24,
+		   	  		    liked : false},				       		 
+				   ];
+
+
+	setTimeout(function(){
+		response.send(pictures);
+	}, 2000);
+
+});
+
+
+
 
 //se lanza el servidor web
 app.listen(3000, function(err){

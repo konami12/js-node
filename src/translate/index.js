@@ -17,7 +17,6 @@ var en                 = require("./en");
 require('intl-relativeformat/dist/locale-data/en.js');
 require('intl-relativeformat/dist/locale-data/es.js');
 
-var relativeFormat = new IntlRelativeFormat("es");
 var MESSAGES       = {"es-MX" : es, "en-US" : en};
 
 module.exports = {
@@ -29,8 +28,9 @@ module.exports = {
 		return msgFormat.format(opt);
 	},
 	formatDate : function(date, lang){
-		lang               = lang || "es";
-		var relativeFormat = new IntlRelativeFormat(lang);
+		
+		lang               = localStorage.getItem('lang') || "es-MX";
+		var relativeFormat = new IntlRelativeFormat('es');
 		return relativeFormat.format(date);
 	}	
 };

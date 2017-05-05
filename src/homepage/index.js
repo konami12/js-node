@@ -6,7 +6,7 @@ var superagent = require("superagent");
 var axios      = require("axios")
 
 
-page("/", header, loadPictureAxios, function(contexto, next){
+page("/", header, loadPictureFetch, function(contexto, next){
 	var main           = document.getElementById("main-container");
 	var title          = document.getElementsByTagName("title");
 	title[0].innerHTML = ".:: Platzigram ::.";
@@ -56,6 +56,27 @@ function loadPictureAxios(contexto, next)
 	});
 }
 
+
+/**
+ * Esta funcion permite un llada ajax utilizando fecth
+ * @param  Json   contexto Permite pasar valores entre las funciones 
+ * @param  {Function} next llama al siguiente meddilwere
+ * @return void.
+ */
+function loadPictureFetch(contexto, next)
+{
+	fetch("/api/database")
+	.then(function(response){
+		return response.json();
+	})
+	.then(function(data){
+		contexto.pictures = data;
+		next();
+	})
+	.catch(function(error){
+		console.log("Error => %O " + error);
+	});
+}
 
 
 

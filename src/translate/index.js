@@ -17,8 +17,8 @@ var en                 = require("./en");
 require('intl-relativeformat/dist/locale-data/en.js');
 require('intl-relativeformat/dist/locale-data/es.js');
 
-var MESSAGES       = {"es-MX" : es, "en-US" : en};
-
+var MESSAGES = {"es-MX" : es, "en-US" : en};
+var lang     = "";
 module.exports = {
 
 	formatMessage : function(msg, opt){

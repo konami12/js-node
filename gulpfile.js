@@ -24,7 +24,7 @@ gulp.task("copy-assets", function(){
 //permite la compilacion de los paquetes de JS 
 gulp.task("package-js", function(){
 		 browserify("./src/index.js")
-        .transform(babelify)
+        .transform(babelify, {presets:["es2015"], plugins:['syntax-async-functions', 'transform-regenerator']} )
         .bundle()
         .pipe(source("index.js"))
         .pipe(rename("app.js"))

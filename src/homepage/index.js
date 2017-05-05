@@ -6,15 +6,13 @@ var superagent = require("superagent");
 var axios      = require("axios")
 
 
-page("/", header, loadPictureFetch, function(contexto, next){
+page("/", header, asyncLoad, function(contexto, next){
 	var main           = document.getElementById("main-container");
 	var title          = document.getElementsByTagName("title");
 	title[0].innerHTML = ".:: Platzigram ::.";
 	main.innerHTML     = "";
 	empty(main).appendChild(template(contexto.pictures));
 });
-
-
 
 /**
  * Esta funcion permite un llamdaa ajax utilizando superagent
@@ -56,7 +54,6 @@ function loadPictureAxios(contexto, next)
 	});
 }
 
-
 /**
  * Esta funcion permite un llada ajax utilizando fecth
  * @param  Json   contexto Permite pasar valores entre las funciones 
@@ -79,5 +76,17 @@ function loadPictureFetch(contexto, next)
 }
 
 
+async function asyncLoad(contexto, next)
+{
+	try
+	{
+		contexto.pictures = await fetch("/api/database").then(res => res.json());
+		next();
+	}	
+	catch(error)
+	{
+		console.log("Error => %O" + error);
+	}
+}
 
 page();

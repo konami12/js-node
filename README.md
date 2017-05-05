@@ -189,3 +189,7 @@ Para el manejo de las peticiones ajax se mostraran 3 ejemplo con las librerias
 - super agent : https://github.com/visionmedia/superagent
 - axios       : https://github.com/mzabriskie/axios
 - fetch       : Api nativa esta es soportada por la mayoria de navegadores.
+
+ASYNC / AWAIT
+
+

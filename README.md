@@ -193,3 +193,6 @@ Para el manejo de las peticiones ajax se mostraran 3 ejemplo con las librerias
 ASYNC / AWAIT
 
 
+La declaración de async function asíncrona define una función asincrónica , que devuelve un objeto AsyncFunction .
+
+-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function

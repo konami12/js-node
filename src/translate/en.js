@@ -19,5 +19,7 @@ module.exports = {
 	q1        : "Do you have an account?",
 	q1l1      : "Get in",
 	q2        : "You do not have an account?",
-	q2l2      : "Sign up"
+	q2l2      : "Sign up",
+	btnUpload : "Upload Image",
+	upload    : "Upload"
 };

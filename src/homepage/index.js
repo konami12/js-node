@@ -6,7 +6,7 @@ var superagent = require("superagent");
 var axios      = require("axios")
 
 
-page("/", header, asyncLoad, function(contexto, next){
+page("/", header, loadPictureFetch, function(contexto, next){
 	var main           = document.getElementById("main-container");
 	var title          = document.getElementsByTagName("title");
 	title[0].innerHTML = ".:: Platzigram ::.";

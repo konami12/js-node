@@ -19,6 +19,8 @@ module.exports = {
 	q1        : "¿Tienes una cuenta?",
 	q1l1      : "Entrar",
 	q2        : "¿No tienes una cuenta?",
-	q2l2      : "Regístrate"
+	q2l2      : "Regístrate",
+	btnUpload : "Cargar imagen",
+	upload    : "Subir"
 
 };

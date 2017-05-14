@@ -196,3 +196,11 @@ ASYNC / AWAIT
 La declaración de async function asíncrona define una función asincrónica , que devuelve un objeto AsyncFunction .
 
 -https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+
+//==============================================================================//
+
+SUBIENDO ARCHIVOS 
+
+Para subir archivos se utilizara la libreaira 
+
+-multer =  https://github.com/expressjs/multer

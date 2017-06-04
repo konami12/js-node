@@ -51,7 +51,6 @@ module.exports = function pictureCard(data){
         return false;
     }
 
-
     el = render(data);
 
     return el;

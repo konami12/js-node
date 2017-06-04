@@ -23,6 +23,8 @@ gulp.task("copy-assets", function(){
 
 //permite la compilacion de los paquetes de JS 
 gulp.task("package-js", function(){
+
+     console.log("----- Compilando JS ------");
 		 browserify("./src/index.js")
         .transform(babelify, {presets:["es2015"], plugins:['syntax-async-functions', 'transform-regenerator']} )
         .bundle()

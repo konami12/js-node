@@ -7,10 +7,10 @@ var multer     = require("multer");
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './upload')
+    cb(null, './public');
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now())
+    cb(null, file.fieldname + '-' + Date.now());
   }
 });
 
@@ -41,13 +41,16 @@ module.exports = function (pictures){
 					</div>
 					<div class="row">
 						<div class="col s12 m10 offset-m1 l6 offset-l3">
-							${pictures.map(function(pic){
-								return card_pic(pic);
-							})}
+							${getDataUser(pictures)}
 						</div>
 					</div>
 				</div>`;
 
+
+	function getDataUser(pictures)
+	{
+		return pictures.map(items => items.map(item => card_pic(item)));
+	}
 
 
 	function toggleButton()
@@ -80,6 +83,7 @@ module.exports = function (pictures){
 			.post("/api/upload")
 			.send(data)
 			.end(function(error, response){
+				btnCancel();
 				console.log(arguments);
 			})
 	}

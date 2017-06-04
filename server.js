@@ -2,7 +2,7 @@
 var express = require("express");
 var multer  = require("multer");
 var app     = express();
-
+var fs      = require("fs");
 //======================================================//
 
 /**
@@ -65,34 +65,48 @@ app.get("/signin", function(request, response){
 	response.render("index", {title: ".:: Platzigram | Signin ::."});
 });
 
-app.get("/api/database", function(request, response){
+app.get("/api/database/:username", function(request, response){
+	let pictures = fs.readFileSync("./src/database/index.js", "utf8");
+	let user     = (request.params.username).toLowerCase();
+	let json     = [];
+	pictures     = JSON.parse(pictures);
+	let flag     = false;
 
-	var pictures = [
-				       {user   : {
-				       		  		username : "Konami12",
-				       		  		avatar   : "avatar.jpg"
-		   	  		            },
-		   	  		    url   : 'office.jpg',
-		   	  		    date  : new Date().getTime(),
-		   	  		    likes : 0,
-		   	  		    liked : false},
-				       {user   : {
-				       		  		username : "Konami12",
-				       		  		avatar   : "avatar.jpg"
-		   	  		            },
-		   	  		    url   : 'hulk.jpg', 
-		   	  		    date  :  new Date().setDate(new Date().getDate() - 10),
-		   	  		    likes : 24,
-		   	  		    liked : false},				       		 
-				   ];
+	switch (user)
+	{
+		case "all":
+			json = pictures.map(item => {
+				return (item.imgs).map(img => {
+					let num = Math.floor(Math.random() * 10);
+					return {
+								user      : item.user,
+								url       : img.url,
+								likes     : Math.floor(Math.random() * 100),
+								liked     : ((num/2) === 0)? true : false,
+								date      : new Date().setDate(new Date().getDate() - num)
+						   }; 
+				});
+			});
+			flag = true;
+		break; 
 
+		default:
+			pictures.map(item => {
 
-	setTimeout(function(){
-		response.send(pictures);
-	}, 2000);
-
+				for(let key in item)
+				{
+					let _user = (item.user.username).toLowerCase();
+					if (_user === user)
+					{
+						json = item;
+						flag = true;
+					}
+				}
+			});
+		break;
+	}
+	response.send({data: json, status:flag});
 });
-
 
 app.post("/api/upload", function(request, response){
 	
@@ -108,10 +122,19 @@ app.post("/api/upload", function(request, response){
 			response.send("La imagen se cargo correctamente");
 		}
 	});
-
-
 });
 
+/*app.get("/api/user/:username" function(request, response){
+
+
+
+});*/
+
+
+app.get("/user/:username", function(request, response){
+	
+	response.render("index", {title: ".:: Platzigram | " +  request.params.username + " ::. "});
+});
 
 
 

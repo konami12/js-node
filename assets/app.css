@@ -6810,3 +6810,18 @@ body {
     cursor: pointer;
     opacity: 0;
     filter: alpha(opacity=0); }
+
+.user-page {
+  padding-top: 25px; }
+  .user-page .row .s4 img.materialboxed {
+    cursor: pointer;
+    width: 100%; }
+  .user-page .row .aux {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%; }
+  .user-page .materialboxed:hover:not(.active) {
+    opacity: 0.4 !important; }
+    .user-page .materialboxed:hover:not(.active) + .aux {
+      display: block; }

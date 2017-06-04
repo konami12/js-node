@@ -11,7 +11,7 @@ page("/", header, loadPictureFetch, function(contexto, next){
 	var title          = document.getElementsByTagName("title");
 	title[0].innerHTML = ".:: Platzigram ::.";
 	main.innerHTML     = "";
-	empty(main).appendChild(template(contexto.pictures));
+	empty(main).appendChild(template(contexto.pictures.data));
 });
 
 /**
@@ -62,7 +62,7 @@ function loadPictureAxios(contexto, next)
  */
 function loadPictureFetch(contexto, next)
 {
-	fetch("/api/database")
+	fetch("/api/database/all")
 	.then(function(response){
 		return response.json();
 	})

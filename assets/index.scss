@@ -189,3 +189,33 @@ $avatar-size : 48px;
     }
   } 
 }
+
+.user-page
+{
+  padding-top: 25px;
+  .row
+  {
+    .s4 img.materialboxed
+    {
+      cursor:pointer;
+      width: 100%;
+
+    }
+    .aux
+    {
+      color:white;
+      position: absolute;
+      left: 50%;
+      top:50%;
+    }
+  }
+
+.materialboxed:hover:not(.active) {
+    opacity: .4!important;
+     + .aux
+    {
+      display:block
+    }
+}
+
+}
